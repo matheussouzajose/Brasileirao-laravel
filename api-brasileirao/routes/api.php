@@ -2,6 +2,6 @@
 
 use Illuminate\Http\Request;
 
-// Route::get("tasks","ChampionshipControllers@getDados");
-Route::get("tasks","ChampionshipControllers@getDados2");
+Route::get("ano2018","ChampionshipControllers@tranferDadosJson");
+Route::get("equipes","ChampionshipControllers@getDadosEquipes");
 

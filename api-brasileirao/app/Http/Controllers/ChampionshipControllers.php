@@ -6,11 +6,14 @@ use Illuminate\Http\Request;
 
 class ChampionshipControllers extends Controller
 {
-    function getDados()
+    function tranferDadosJson()
     {
-        $file =  file_get_contents(storage_path('app\ano2018.json'));
-        $json = json_decode($file, true);
-        return $json['fases'];
-        // return 'ok';
+        return  json_decode(file_get_contents(storage_path('app\ano2018.json')), true);
+    }
+
+    function getDadosEquipes()
+    {
+        $equipes = $this->tranferDadosJson()['equipes'];
+        return $equipes;
     }
 }
